@@ -184,12 +184,15 @@ class RCSegmentedControl: NSControl {
     newSelectionFrame = NSInsetRect(newSelectionFrame, 4, 4)
 
     if animated {
-      selectionIndicator.animator().frame = newSelectionFrame.integral
+      NSAnimationContext.runAnimationGroup { _ in
+        selectionIndicator.animator().frame = newSelectionFrame.integral
+        updateSelectionMask(with: newSelectionFrame.integral, animated: true)
+      }
     } else {
       selectionIndicator.frame = newSelectionFrame.integral
+      updateSelectionMask(with: newSelectionFrame.integral, animated: false)
     }
 
-    updateSelectionMask(with: newSelectionFrame.integral, animated: animated)
   }
 
   private func updateSeparators(with selectionIndex: Int?) {
