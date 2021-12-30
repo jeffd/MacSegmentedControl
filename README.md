@@ -9,6 +9,7 @@ An implementation of iOS' UISegmentedControl on macOS.
 ## Demo
 
 https://user-images.githubusercontent.com/2890/147763162-ee5855ad-447e-4667-8d0c-cd4599b021d6.mov
+
 https://user-images.githubusercontent.com/2890/147763167-90392ad8-2628-4e2f-94cd-bfb4cf3ea6f3.mov
 
 ## Area for improvement
